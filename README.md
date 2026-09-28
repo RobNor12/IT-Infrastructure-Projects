@@ -1,4 +1,4 @@
-# FreeScout Help Desk Lab
+# IT Help Desk & Infrastructure Lab
 
 A hands-on IT help desk and systems administration lab built around **FreeScout, Microsoft Active Directory, Windows, Linux, and Microsoft Azure**.
 
