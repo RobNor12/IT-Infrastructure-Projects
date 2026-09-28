@@ -6,6 +6,7 @@ Hands-on systems administration and infrastructure projects focused on Windows S
 
 | Project Name | Focus Subject | link |
 | :--- | :--- | :--- |
+| IT Help Desk & Infrastructure Lab | Simulated help desk lab | [Help Desk Link]()
 | Active Directory Hybrid homelab | Active directory lab connecing both Linux and Windows | [Active directory link](https://github.com/RobNor12/IT-Automation-Engineering/blob/Active-Directory-hybrid-Homelab/README.md) |
 | Azure AD Hybrid Lab | Azure Hybrid lab connecting both linux and windows alongside a vm outside azures network | [Azure Lab Link](https://github.com/RobNor12/IT-Automation-Engineering/blob/Azure-AD-Hybrid-Lab/README.md)|
 | Credential Generator & Lifecycle Manager | Automated Credential Manager. | [Credential Manager Link](https://github.com/RobNor12/Security-Engineering-Projects/blob/Credential-Generator-&-Lifecycle-Manager/README.md) |
