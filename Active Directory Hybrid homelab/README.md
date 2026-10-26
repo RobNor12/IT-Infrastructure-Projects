@@ -452,7 +452,3 @@ The completed lab successfully demonstrated a mixed Windows/Linux enterprise env
 The project provided practical experience with **Active Directory, DNS, Kerberos, LDAP, Windows administration, Linux administration, Samba, Winbind, PAM, PowerShell, and cross-platform authentication troubleshooting**.
 
 ---
-
-## Return Page
-
-[Return to Repository Hub](https://github.com/RobNor12/IT-Automation-Engineering/blob/main/README.md)
