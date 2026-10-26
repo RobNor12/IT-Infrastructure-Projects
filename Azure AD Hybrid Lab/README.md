@@ -473,6 +473,3 @@ The project provided hands-on experience with **Active Directory, DNS, domain-co
 
 ---
 
-## Return Page
-
-[Return to Repository Hub](https://github.com/RobNor12/IT-Automation-Engineering/blob/main/README.md)
