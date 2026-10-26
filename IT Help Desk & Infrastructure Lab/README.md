@@ -566,6 +566,4 @@ It combines **systems administration, networking, security, Active Directory, cl
 
 The end result is a small but functional IT infrastructure lab that simulates the workflow of an internal help desk supporting Windows users in a domain environment.
 
-### Return page
-
-[Return to Repository Hub](https://github.com/RobNor12/IT-Automation-Engineering/blob/main/README.md)
+---
