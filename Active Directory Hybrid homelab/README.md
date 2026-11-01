@@ -65,12 +65,6 @@ LAB
 CWM3382
 ```
 
-**IP Address:**
-
-```text
-104.225.141.208
-```
-
 ### Windows Client
 
 ```text
