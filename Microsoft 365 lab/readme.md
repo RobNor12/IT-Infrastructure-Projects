@@ -55,12 +55,22 @@ A hands-on lab where I administered a Microsoft 365 Business Premium trial tenan
 ## Lab Walkthrough
 
 ### 1. Tenant setup
-[Describe what you did: signed up for the trial, created the admin account, named the tenant, and turned off recurring billing.]
 
-The trial started with only [1] license, which my admin account was already using. I added [9] licenses to the trial subscription so I could create licensed test users.
+The trial started with only [1] license, which my admin account was already using. I added [9] additonal licenses to the trial subscription so I could create licensed test users.
 
 ### 2. Users
-
+|Display name | Role |
+|---|---|
+| Robert Norris | Global Admin |
+| Test_hr_owner | Human resources group owner |
+| Test_sales_owner | Sales group owner |
+| Test_IT_owner | Help desk group owner |
+| Test_sales_1 | Sales group member |
+| Test_sales_2 | Sales group member |
+| Test_hr_1 | Human resources group member |
+| Test_hr_2 | Human resources group member |
+| Test_it_1 | Helpdesk administartor |
+| Test_it_2 | User administrator |
 
 ### 3. Groups
 
@@ -71,7 +81,7 @@ The trial started with only [1] license, which my admin account was already usin
 | IT-Helpdesk | Security | Test IT Manager | Test IT 1, Test IT 2 |
 
 ### 4. Mailboxes
-I created a shared mailbox for the help desk: `helpdesksharedemail@BayouITServicesCo.onmicrosoft.com`, with Test IT 1, Test IT 2 and Test IT Owner as members.
+I created a shared mailbox for the help desk: `helpdesksharedemail@BayouITServicesCo.onmicrosoft.com`, with Test IT 1, Test IT 2, and Test IT Owner as members.
 
 ### 5. Incidents
 
@@ -81,7 +91,7 @@ Each incident below is written up as a ticket-style resolution.
 - **Reported:** Test_hr_2 reported from their phone that they have forgotten their password and need help
 - **Cause:** The user had forgotten their password
 - **Fix:** Test_it_1 reset their password and provided them with a temporary password to allow them to log back in 
-- **Verification:** Test_hr_2 had signed in as per the request of test_it_2, test_hr_2 gave the help desk email confirming they were able to get back into their account
+- **Verification:** Test_hr_2 had signed in as per the request of test_it_2. Test_hr_2 gave the help desk email confirming they were able to get back into their account
 
 #### Incident 2: User added to the wrong group
 - **Reported:** Test_hr_1 reported to the help desk team that a member was added to their group as they were instructed to by their manager 
@@ -93,28 +103,21 @@ Each incident below is written up as a ticket-style resolution.
 - **Reported:** Test_sales_owner reported to the help desk group that a member of their group left the company
 - **Tier 1 attempt:** Test 1 attempted to remove the removed member, but they did not have sufficient authority 
 - **Escalation:** Escalated the incident to help desk tier 2 who removed that member from the company
-- **Fix:** Test_it_2
-- **Verification:** [Confirmed the user appeared in Deleted users and could not sign in.]
+- **Fix:** Test_it_2 logged in and removed that member from the company 
+- **Verification:** The employee that test_sales_owner reported as leaving the company showed up as deleted and m365 had an extra license it didn't have before
 
 #### Incident 4: User removed by mistake
-- **Reported:** [A manager reported the wrong employee had been offboarded.]
-- **Cause:** [User was removed in error.]
-- **Fix:** [Restored the user from Deleted users, set a new password, and re-added their license and groups.]
-- **Verification:** [Signed in as the restored user and confirmed access to Sales resources.]
-
-![Restored user](screenshots/10-restored-user.png)
+- **Reported:** Test_sales_owner had reported that test_sales_1 had been incorrectly removed from the company 
+- **Cause:** The help desk team incorrectly removed Test_sales_1 
+- **Fix:** Test_it_2 restored their license and added them back to the correct group
+- **Verification:** The restored user emailed the help desk team once they were able to log back into their account
 
 #### Incident 5: User cannot use MFA
-- **Reported:** [User walked up to the help desk after replacing their phone and could no longer approve sign-in prompts.]
-- **Identity verification:** [Confirmed the user's identity before making changes, e.g., employee ID and department, and confirmed with their manager.] MFA resets are a common social engineering target, so verification comes first.
-- **Cause:** [Registered authentication method was on the old device.]
-- **Fix:** [Required MFA re-registration through the user's authentication methods in Entra ID. If Tier 1 lacked permission, note the denial, who it was escalated to, and which role was needed.]
-- **Verification:** [User re-registered a new device and signed in successfully, then emailed the help desk mailbox to confirm the issue was resolved.]
-
-*Note: This is a simulated scenario. MFA lockouts are typically handled in person, by phone, or through a manager rather than by email, since a locked-out user may not be able to reach their own inbox.*
-
-![MFA re-registration](screenshots/11-mfa.png)
-![Sign-in logs](screenshots/12-signin-logs.png)
+- **Reported:** User reported to the help desk team in person that they got a new device and cannot access MFA
+- **Identity verification:** The user reported in person to the help desk department to confirm their identity
+- **Cause:** The user's old device became unusable, and the new device didn't have the correct authentication for their account 
+- **Fix:** The user was ran through the steps to set up a new MFA app on their new device
+- **Verification:** User emailed the help desk team after they were able to access their new account
 
 ---
 
@@ -125,16 +128,3 @@ Each incident below is written up as a ticket-style resolution.
 **Shared mailbox messages not appearing.** A technician did not see test emails because shared mailboxes do not deliver copies into members' personal inboxes. Members open the shared mailbox from their own Outlook. After adding it, the messages appeared.
 
 **Helpdesk Administrator cannot remove users.** I created a Tier 2 account with the User Administrator role instead of over-privileging the Tier 1 account, and handled offboarding through escalation.
-
-Key takeaways:
-- [What surprised you or what you'd do differently]
-- [One thing about how cloud identity differs from on-prem Active Directory]
-- [One thing about how you'd explain this to an end user]
-
-## How This Connects to My Other Labs
-
-- [Azure Hybrid Active Directory Lab](../IT-Infrastructure-Projects): on-prem identity concepts that map directly to Entra ID
-- [IT Help Desk & Infrastructure Lab](../IT-Infrastructure-Projects): earlier lab covering a FreeScout ticketing workflow and escalation
-
-**Author:** Robert Norris III
-[LinkedIn](https://www.linkedin.com/in/robertn-331315345) | [GitHub](https://github.com/RobNor12)
