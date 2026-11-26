@@ -33,13 +33,11 @@ A hands-on lab where I administered a Microsoft 365 Business Premium trial tenan
 | Admin account(Robert Norris) | Global Administrator | Tenant-level changes and billing only |
 | Test IT 1 | Helpdesk Administrator | Tier 1 support (password resets, basic tasks) |
 | Test IT 2 | User Administrator | Tier 2 escalations (user removal, license changes) |
-| Test HR Manager | Owner of HR group | Manages HR group membership |
-| Test Sales Manager | Owner of Sales group | Manages Sales group membership |
-| Test IT Manager | Owner of IT-Helpdesk group | Manages IT-Helpdesk group membership |
+| Test HR Owner | Owner of HR group | Manages HR group membership |
+| Test Sales Owner | Owner of Sales group | Manages Sales group membership |
+| Test IT Owner | Owner of IT-Helpdesk group | Manages IT-Helpdesk group membership |
 | Test HR 1, Test HR 2 | Standard users | HR department members |
 | Test Sales 1, Test Sales 2 | Standard users | Sales department members |
-
-![Role assignments](screenshots/01-role-assignments.png)
 
 ## Skills Demonstrated
 
@@ -59,14 +57,10 @@ A hands-on lab where I administered a Microsoft 365 Business Premium trial tenan
 ### 1. Tenant setup
 [Describe what you did: signed up for the trial, created the admin account, named the tenant, and turned off recurring billing.]
 
-The trial started with only [1] license, which my admin account was already using. I added [5+] licenses to the trial subscription so I could create licensed test users.
-
-![Tenant overview](screenshots/02-tenant-overview.png)
+The trial started with only [1] license, which my admin account was already using. I added [9] licenses to the trial subscription so I could create licensed test users.
 
 ### 2. Users
-[Describe the users you created and the licenses you assigned.]
 
-![Active users](screenshots/03-active-users.png)
 
 ### 3. Groups
 
@@ -76,42 +70,31 @@ The trial started with only [1] license, which my admin account was already usin
 | Sales | Microsoft 365 | Test Sales Manager | Test Sales 1, Test Sales 2 |
 | IT-Helpdesk | Security | Test IT Manager | Test IT 1, Test IT 2 |
 
-![Groups](screenshots/04-groups.png)
-
 ### 4. Mailboxes
 I created a shared mailbox for the help desk: `helpdesksharedemail@BayouITServicesCo.onmicrosoft.com`, with Test IT 1, Test IT 2 and Test IT Owner as members.
-
-![Shared mailbox](screenshots/05-shared-mailbox.png)
 
 ### 5. Incidents
 
 Each incident below is written up as a ticket-style resolution.
 
 #### Incident 1: Password reset
-- **Reported:** [User cannot sign in after forgetting their password.]
-- **Cause:** [Forgotten password.]
-- **Fix:** [Test IT 1 reset the password and required a change at next sign-in.]
-- **Verification:** [Signed in as the user and confirmed the forced password change.]
-
-![Password reset](screenshots/06-password-reset.png)
+- **Reported:** Test_hr_2 reported from their phone that they have forgotten their password and need help
+- **Cause:** The user had forgotten their password
+- **Fix:** Test_it_1 reset their password and provided them with a temporary password to allow them to log back in 
+- **Verification:** Test_hr_2 had signed in as per the request of test_it_2, test_hr_2 gave the help desk email confirming they were able to get back into their account
 
 #### Incident 2: User added to the wrong group
-- **Reported:** [User can see HR content they shouldn't have access to.]
-- **Cause:** [User was added to the HR group by mistake.]
-- **Fix:** [Removed the user from HR and confirmed they remained in Sales.]
-- **Verification:** [Signed in as the user and confirmed HR content was no longer accessible.]
-
-![Group membership before and after](screenshots/07-wrong-group.png)
+- **Reported:** Test_hr_1 reported to the help desk team that a member was added to their group as they were instructed to by their manager 
+- **Cause:** Test_it_1 was incorrectly added to the Human Resources group
+- **Fix:** Test_it_1 was removed from the Human Resources group but was still a member of the help desk group
+- **Verification:** Test_it_1 no longer showed up as a member of the Human Resources group, and could no longer access that content
 
 #### Incident 3: Employee leaves the company
-- **Reported:** [HR requested offboarding for a departing employee.]
-- **Tier 1 attempt:** [Test IT 1 attempted to remove the user and was denied: Helpdesk Administrator cannot delete users.]
-- **Escalation:** [Escalated to Tier 2 with a note describing the attempt and the error.]
-- **Fix:** [Test IT 2 blocked sign-in, removed group memberships and license, and removed the user.]
+- **Reported:** Test_sales_owner reported to the help desk group that a member of their group left the company
+- **Tier 1 attempt:** Test 1 attempted to remove the removed member, but they did not have sufficient authority 
+- **Escalation:** Escalated the incident to help desk tier 2 who removed that member from the company
+- **Fix:** Test_it_2
 - **Verification:** [Confirmed the user appeared in Deleted users and could not sign in.]
-
-![Permission denied](screenshots/08-tier1-denied.png)
-![Deleted users](screenshots/09-deleted-users.png)
 
 #### Incident 4: User removed by mistake
 - **Reported:** [A manager reported the wrong employee had been offboarded.]
